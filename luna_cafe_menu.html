@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>کافه لونا | منوی کافه</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&display=swap');
+:root{--bg:#f6f1e9;--ink:#29231f;--muted:#81766c;--brown:#6f4934;--cream:#fffaf2;--line:#e8ded1;--accent:#c58a55}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:'Vazirmatn',Tahoma,sans-serif}
+header{height:78px;display:flex;align-items:center;justify-content:space-between;padding:0 7%;background:rgba(255,250,242,.92);border-bottom:1px solid var(--line)}
+.brand{font-size:22px;font-weight:800;color:var(--brown);letter-spacing:-1px}.brand span{color:var(--accent)}
+nav{display:flex;gap:28px;font-size:13px;color:var(--muted)}nav a{text-decoration:none;color:inherit}
+.top-btn{background:var(--brown);color:white;padding:10px 18px;border-radius:30px;font-size:12px;text-decoration:none}
+.hero{min-height:430px;padding:70px 8%;display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:40px;background:linear-gradient(110deg,#f6f1e9 50%,#eee2d3 50%)}
+.eyebrow{color:var(--accent);font-size:13px;font-weight:700;letter-spacing:1px}.hero h1{font-size:clamp(36px,5vw,62px);line-height:1.35;margin:14px 0;color:#35271f}.hero p{color:var(--muted);line-height:2;font-size:15px;max-width:480px}
+.hero-actions{display:flex;gap:12px;margin-top:28px}.primary,.secondary{border:0;padding:13px 23px;border-radius:28px;font:inherit;font-size:13px;cursor:pointer}.primary{background:var(--brown);color:white}.secondary{background:transparent;border:1px solid #bca894;color:var(--brown)}
+.hero-photo{height:310px;border-radius:48% 48% 18px 18px;overflow:hidden;position:relative;box-shadow:0 20px 45px #5a3a2420}.hero-photo img{width:100%;height:100%;object-fit:cover;display:block}.photo-tag{position:absolute;bottom:18px;right:18px;background:var(--cream);padding:12px 18px;border-radius:12px;font-size:12px}
+main{max-width:1120px;margin:auto;padding:65px 24px 80px}.section-head{text-align:center;margin-bottom:28px}.section-head small{color:var(--accent);font-weight:700}.section-head h2{font-size:30px;margin:8px 0}.section-head p{color:var(--muted);font-size:13px}
+.tools{display:flex;justify-content:space-between;align-items:center;gap:15px;flex-wrap:wrap;margin:30px 0 24px}.filters{display:flex;gap:8px;flex-wrap:wrap}.filter{border:1px solid var(--line);background:var(--cream);padding:9px 17px;border-radius:25px;font:inherit;font-size:12px;color:var(--muted);cursor:pointer}.filter.active{background:var(--brown);border-color:var(--brown);color:white}
+.search{border:1px solid var(--line);background:var(--cream);border-radius:25px;padding:10px 16px;font:inherit;width:220px;outline:none}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.item{background:var(--cream);border:1px solid var(--line);border-radius:18px;overflow:hidden;transition:.25s}.item:hover{transform:translateY(-4px);box-shadow:0 14px 30px #4b2e1712}.item img{width:100%;height:175px;object-fit:cover;display:block}.item-body{padding:16px}.item-top{display:flex;justify-content:space-between;gap:8px;align-items:start}.item h3{margin:0;font-size:16px}.price{color:var(--brown);font-weight:800;font-size:14px;white-space:nowrap}.item p{font-size:12px;color:var(--muted);line-height:1.8;margin:9px 0 14px}.add{border:1px solid #d8c5b1;background:transparent;color:var(--brown);border-radius:20px;padding:7px 13px;font:inherit;font-size:11px;cursor:pointer}.add:hover{background:#f0e5d8}
+.note{margin-top:55px;background:#e9ddce;border-radius:22px;padding:28px 32px;display:flex;justify-content:space-between;align-items:center;gap:20px}.note h3{margin:0 0 7px;font-size:20px}.note p{margin:0;color:#76685c;font-size:12px;line-height:1.9}.note strong{font-size:24px;color:var(--brown);white-space:nowrap}
+footer{background:#30251f;color:#f7eee4;padding:32px 8%;display:flex;justify-content:space-between;align-items:center;gap:15px;flex-wrap:wrap}footer p{font-size:12px;color:#c7b8a9;margin:5px 0}footer .brand{color:#fff}
+.toast{position:fixed;bottom:22px;left:22px;background:#30251f;color:white;padding:12px 18px;border-radius:12px;font-size:13px;opacity:0;transform:translateY(12px);transition:.25s;pointer-events:none}.toast.show{opacity:1;transform:translateY(0)}
+@media(max-width:760px){header{padding:0 5%;height:68px}nav{display:none}.hero{grid-template-columns:1fr;padding:48px 7%;gap:28px}.hero-photo{height:240px;grid-row:1}.hero h1{font-size:40px}.grid{grid-template-columns:repeat(2,1fr)}main{padding:48px 16px}.note{padding:22px;align-items:flex-start;flex-direction:column}}
+@media(max-width:480px){.grid{grid-template-columns:1fr}.item img{height:200px}.search{width:100%}.tools{align-items:stretch}.hero-actions{flex-wrap:wrap}}
+</style>
+</head>
+<body>
+<header>
+  <div class="brand">کافه <span>لونا</span> ☕</div>
+  <nav><a href="#home">خانه</a><a href="#menu">منوی کافه</a><a href="#about">درباره ما</a><a href="#contact">تماس</a></nav>
+  <a class="top-btn" href="#menu">مشاهده منو</a>
+</header>
+<section class="hero" id="home">
+  <div>
+    <div class="eyebrow">یک مکث دلچسب در میان شلوغی روز</div>
+    <h1>طعم لحظه‌های<br>خوب، اینجاست.</h1>
+    <p>به کافه لونا خوش آمدید؛ جایی برای قهوه‌های خوش‌عطر، دسرهای تازه و گفت‌وگوهای شیرین. نوشیدنی مورد علاقه‌ات را پیدا کن.</p>
+    <div class="hero-actions"><button class="primary" onclick="document.querySelector('#menu').scrollIntoView({behavior:'smooth'})">دیدن منو</button><button class="secondary" onclick="document.querySelector('#about').scrollIntoView({behavior:'smooth'})">داستان لونا</button></div>
+  </div>
+  <div class="hero-photo"><img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1000&q=85" alt="قهوه و فضای گرم کافه"><div class="photo-tag">☕ هر فنجان، یک حال خوب</div></div>
+</section>
+<main id="menu">
+  <div class="section-head"><small>MENU / منوی لونا</small><h2>چی میل دارید؟</h2><p>با عشق آماده می‌کنیم، با لبخند سرو می‌کنیم.</p></div>
+  <div class="tools"><div class="filters">
+    <button class="filter active" data-cat="all">همه</button><button class="filter" data-cat="coffee">قهوه</button><button class="filter" data-cat="cold">نوشیدنی سرد</button><button class="filter" data-cat="dessert">دسر</button>
+  </div><input class="search" id="search" placeholder="جست‌وجوی آیتم منو..." aria-label="جست‌وجوی منو"></div>
+  <div class="grid" id="items">
+    <article class="item" data-cat="coffee"><img src="https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=700&q=80" alt="اسپرسو"><div class="item-body"><div class="item-top"><h3>اسپرسو</h3><span class="price">۷۵٬۰۰۰ تومان</span></div><p>قهوه‌ای غلیظ و خوش‌عطر با کرمایی لطیف.</p><button class="add">+ افزودن به سفارش</button></div></article>
+    <article class="item" data-cat="coffee"><img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?auto=format&fit=crop&w=700&q=80" alt="لاته"><div class="item-body"><div class="item-top"><h3>کافه لاته</h3><span class="price">۱۱۵٬۰۰۰ تومان</span></div><p>ترکیب اسپرسو و شیر بخارداده‌شده با بافتی مخملی.</p><button class="add">+ افزودن به سفارش</button></div></article>
+    <article class="item" data-cat="coffee"><img src="https://images.unsplash.com/photo-1534778101976-62847782c213?auto=format&fit=crop&w=700&q=80" alt="کاپوچینو"><div class="item-body"><div class="item-top"><h3>کاپوچینو</h3><span class="price">۱۰۵٬۰۰۰ تومان</span></div><p>اسپرسو، شیر گرم و فوم شیر با پودر کاکائو.</p><button class="add">+ افزودن به سفارش</button></div></article>
+    <article class="item" data-cat="cold"><img src="https://images.unsplash.com/photo-1517701604599-bb29b565090c?auto=format&fit=crop&w=700&q=80" alt="آیس آمریکانو"><div class="item-body"><div class="item-top"><h3>آیس آمریکانو</h3><span class="price">۹۵٬۰۰۰ تومان</span></div><p>اسپرسو، آب خنک و یخ؛ ساده و انرژی‌بخش.</p><button class="add">+ افزودن به سفارش</button></div></article>
+    <article class="item" data-cat="cold"><img src="https://images.unsplash.com/photo-1544145945-f90425340c7e?auto=format&fit=crop&w=700&q=80" alt="لیموناد"><div class="item-body"><div class="item-top"><h3>لیموناد تازه</h3><span class="price">۸۵٬۰۰۰ تومان</span></div><p>لیموترش تازه، نعناع و شیرینی متعادل.</p><button class="add">+ افزودن به سفارش</button></div></article>
+    <article class="item" data-cat="dessert"><img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=700&q=80" alt="کیک شکلاتی"><div class="item-body"><div class="item-top"><h3>کیک شکلاتی</h3><span class="price">۱۲۵٬۰۰۰ تومان</span></div><p>کیک شکلاتی نرم با لایه‌ای از گاناش دست‌ساز.</p><button class="add">+ افزودن به سفارش</button></div></article>
+  </div>
+  <section class="note" id="about"><div><h3>قرار بعدی‌مان در لونا؟</h3><p>برای یک قرار دوستانه، یک عصر آرام یا حتی چند دقیقه خلوت با خودت، میزت در کافه لونا آماده است.</p></div><strong>هر روز، ۹ تا ۲۳</strong></section>
+</main>
+<footer id="contact"><div><div class="brand">کافه <span>لونا</span> ☕</div><p>یک فنجان آرامش، نزدیک شما</p></div><div><p>📍 تهران، خیابان نمونه، پلاک ۱۲</p><p>☎ 　 |　 اینستاگرام: @roya_kh2007</p></div><p> Created by Roya Khodaverdi Hasanvand  </p></footer>
+<div class="toast" id="toast">به سفارش شما اضافه شد ☕</div>
+<script>
+const filters=[...document.querySelectorAll('.filter')], cards=[...document.querySelectorAll('.item')], search=document.getElementById('search');let category='all';
+function update(){const q=search.value.trim().toLowerCase();cards.forEach(c=>{const okCat=category==='all'||c.dataset.cat===category;const okText=c.innerText.toLowerCase().includes(q);c.style.display=okCat&&okText?'':'none'})}
+filters.forEach(b=>b.addEventListener('click',()=>{filters.forEach(x=>x.classList.remove('active'));b.classList.add('active');category=b.dataset.cat;update()}));search.addEventListener('input',update);
+const toast=document.getElementById('toast');document.querySelectorAll('.add').forEach(b=>b.addEventListener('click',()=>{toast.classList.add('show');setTimeout(()=>toast.classList.remove('show'),1600)}));
+</script>
+</body>
+</html>
